@@ -2,3 +2,4 @@
 *.log
 secrets.fish
 fish_variables
+cached_layouts
