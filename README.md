@@ -7,11 +7,10 @@ Debian + niri (glass_effect fork) + Noctalia + fish/starship/kitty.
 ```bash
 git clone <repo> ~/dotfiles
 cd ~/dotfiles
-./install.sh                 # backup config cũ rồi symlink
-xargs sudo apt install -y < packages.txt
+./bootstrap.sh   # apt + uv + nvm + symlink, 1 lệnh
 ```
 
-Sau đó cài tay: niri fork, noctalia-shell, uv, nvm (xem cuối packages.txt).
+Hoặc từng bước: `./install.sh` rồi `xargs sudo apt install -y < packages.txt`.
 
 ## Không đưa vào repo (cố ý)
 
