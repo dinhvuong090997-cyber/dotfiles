@@ -1,0 +1,24 @@
+// Layout & theming
+layout {
+    gaps 8
+
+    border {
+        width 2
+        active-color "#7aa2f7"
+        inactive-color "#3b4261"
+    }
+
+    focus-ring {
+        width 2
+        active-color "#7aa2f7"
+        inactive-color "#3b4261"
+    }
+
+    default-column-width { proportion 0.5; }
+
+    preset-column-widths {
+        proportion 0.5
+        proportion 0.6667
+        proportion 0.3333
+    }
+}

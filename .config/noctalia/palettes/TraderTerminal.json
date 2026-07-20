@@ -1,0 +1,22 @@
+{
+  "name": "TraderTerminal",
+  "mode": "light",
+  "colors": {
+    "primary": "#2E7D32",
+    "on_primary": "#FFFFFF",
+    "primary_container": "#A5D6A7",
+    "on_primary_container": "#1B5E20",
+    "secondary": "#455A64",
+    "on_secondary": "#FFFFFF",
+    "secondary_container": "#CFD8DC",
+    "on_secondary_container": "#263238",
+    "surface": "#F5F5F5",
+    "on_surface": "#212121",
+    "surface_variant": "#E0E0E0",
+    "on_surface_variant": "#424242",
+    "background": "#FAFAFA",
+    "on_background": "#212121",
+    "error": "#C62828",
+    "on_error": "#FFFFFF"
+  }
+}

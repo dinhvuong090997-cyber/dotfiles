@@ -1,0 +1,4 @@
+// Cursor
+cursor {
+    hide-after-inactive-ms 3000
+}

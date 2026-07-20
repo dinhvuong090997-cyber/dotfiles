@@ -1,0 +1,32 @@
+# Cài bằng: xargs sudo apt install -y < packages.txt
+# (một số cần cài tay — xem phần dưới)
+
+fish
+starship
+kitty
+neovim
+lsd
+yazi
+git
+gh
+fastfetch
+btop
+mpv
+wlogout
+qt5ct
+qt6ct
+fuzzel
+wf-recorder
+slurp
+grim
+ddcutil
+playerctl
+fcitx5
+fcitx5-bamboo
+fcitx5-unikey
+
+# === Cài tay (không có trong apt) ===
+# niri glass_effect fork : build từ source fork
+# noctalia-shell         : https://docs.noctalia.dev
+# uv                     : curl -LsSf https://astral.sh/uv/install.sh | sh
+# nvm/node               : https://github.com/nvm-sh/nvm

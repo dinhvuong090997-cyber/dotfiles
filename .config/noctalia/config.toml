@@ -1,0 +1,7 @@
+# Noctalia theme config
+[theme]
+palette = "TraderTerminal"
+mode = "light"
+
+[wallpaper]
+scheme = "m3-content"

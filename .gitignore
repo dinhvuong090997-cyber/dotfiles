@@ -1,0 +1,4 @@
+.git/
+*.log
+secrets.fish
+fish_variables

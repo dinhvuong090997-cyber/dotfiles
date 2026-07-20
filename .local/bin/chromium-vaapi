@@ -1,0 +1,8 @@
+#!/bin/bash
+# Google Chrome with VAAPI + Wayland optimized for HD Graphics 630
+exec google-chrome-stable \
+  --enable-features=VaapiVideoDecodeLinuxGL,VaapiIgnoreDriverChecks \
+  --ozone-platform=wayland \
+  --disable-features=UseChromeOSDirectVideoDecoder \
+  --enable-gpu-rasterization \
+  "$@"

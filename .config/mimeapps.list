@@ -1,0 +1,46 @@
+[Default Applications]
+application/json=nvim.desktop
+application/x-zerosize=nvim.desktop
+audio/aac=io.github.quodlibet.QuodLibet.desktop
+audio/mpeg=io.github.quodlibet.QuodLibet.desktop
+audio/ogg=io.github.quodlibet.QuodLibet.desktop
+audio/wav=io.github.quodlibet.QuodLibet.desktop
+audio/webm=io.github.quodlibet.QuodLibet.desktop
+audio/x-flac=io.github.quodlibet.QuodLibet.desktop
+inode/directory=thunar.desktop
+text/html=google-chrome.desktop
+text/markdown=nvim.desktop
+text/plain=nvim.desktop
+text/x-c++src=nvim.desktop
+text/x-csrc=nvim.desktop
+text/x-python=nvim.desktop
+text/x-shellscript=nvim.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/calendar=thunar.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/vnd.debian.binary-package=org.pwmt.zathura-pdf-poppler.desktop
+
+[Added Associations]
+application/json=nvim.desktop;
+application/x-zerosize=nvim.desktop;
+audio/aac=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+audio/mpeg=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+audio/ogg=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+audio/wav=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+audio/webm=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+audio/x-flac=mpv.desktop;io.github.quodlibet.QuodLibet.desktop;thunar.desktop;
+inode/directory=thunar.desktop;
+text/markdown=libreoffice-writer.desktop;kitty.desktop;nvim.desktop;
+text/plain=nvim.desktop;
+text/x-c++src=nvim.desktop;
+text/x-csrc=nvim.desktop;
+text/x-python=nvim.desktop;
+text/x-shellscript=nvim.desktop;
+x-scheme-handler/calendar=thunar.desktop;
+application/vnd.debian.binary-package=org.pwmt.zathura-pdf-poppler.desktop;
+application/x-shellscript=obsidian.desktop;
+
+[Removed Associations]

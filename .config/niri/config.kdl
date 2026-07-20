@@ -1,0 +1,237 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            options "ctrl:nocaps"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// == Outputs ==
+
+output "HDMI-A-1" {
+    mode "1920x1080@120"
+    transform "normal"
+    position x=1080 y=0
+}
+
+output "HDMI-A-3" {
+    mode "1920x1080@60"
+    transform "90"
+    position x=0 y=0
+}
+
+// === LAUNCH ===
+
+spawn-at-startup "noctalia"
+spawn-at-startup "fcitx5" "-d"
+spawn-at-startup "sh" "-c" "sleep 1 && wl-paste --watch cliphist store"
+
+environment {
+    GTK_IM_MODULE "fcitx"
+    QT_IM_MODULE "fcitx"
+    XMODIFIERS "@im=fcitx"
+    MOZ_ENABLE_WAYLAND "1"
+    XDG_CURRENT_DESKTOP "niri"
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORMTHEME "gtk3"
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// === WINDOW RULES ===
+
+window-rule {
+    match app-id="kitty"
+    border { off; }
+    focus-ring { off; }
+    geometry-corner-radius 18
+    clip-to-geometry true
+    background-effect {
+        blur false
+        xray true
+        liquid-glass {
+            refraction-strength 3.0
+            power-factor 3.0
+            refraction-power 1.0
+        }
+    }
+}
+
+window-rule {
+    match app-id="^google-chrome$"
+    border { off; }
+    focus-ring { off; }
+    geometry-corner-radius 12
+    clip-to-geometry true
+    opacity 0.25
+    background-effect {
+        blur false
+        xray true
+        liquid-glass {
+            refraction-strength 3.0
+            power-factor 3.0
+            refraction-power 1.0
+        }
+    }
+}
+
+window-rule {
+    match app-id="^thunar$"
+    border { off; }
+    focus-ring { off; }
+    geometry-corner-radius 12
+    clip-to-geometry true
+    opacity 0.25
+    background-effect {
+        blur false
+        xray true
+        liquid-glass {
+            refraction-strength 3.0
+            power-factor 3.0
+            refraction-power 1.0
+        }
+    }
+}
+
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    border { off; }
+    focus-ring { off; }
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+    geometry-corner-radius 16
+    clip-to-geometry true
+    opacity 0.25
+    background-effect {
+        blur false
+        xray true
+        liquid-glass {
+            refraction-strength 3.0
+            power-factor 3.0
+            refraction-power 1.0
+        }
+    }
+}
+
+// === FOCUSED: blur ON, opacity tăng ===
+
+window-rule {
+    match is-focused=true
+    match app-id="^google-chrome$"
+    opacity 1.0
+}
+
+window-rule {
+    match is-focused=true
+    match app-id="^thunar$"
+    opacity 1.0
+}
+
+window-rule {
+    match is-focused=true
+    match app-id="dev.noctalia.Noctalia"
+    opacity 1.0
+}
+
+// ============================================================
+// KEY BINDS
+// ============================================================
+binds {
+    Mod+W    { spawn "kitty"; }
+    Mod+Shift+W { spawn-sh "$HOME/.config/niri/scripts/kitty-large.sh"; }
+    Mod+E    { spawn "thunar"; }
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+B     { spawn-sh "$HOME/.local/bin/brightness-slider.sh"; }
+    Ctrl+M       { spawn-sh "$HOME/.config/mpv/scripts/play-yt-audio.sh"; }
+    Mod+Ctrl+N   { spawn-sh "$HOME/.config/mpv/scripts/play-yt-audio.sh next"; }
+    Mod+Ctrl+P   { spawn-sh "$HOME/.config/mpv/scripts/play-yt-audio.sh prev"; }
+
+    Mod+Q       { close-window; }
+    Mod+V       { spawn-sh "$HOME/.config/niri/scripts/record-region.sh"; }
+    Mod+Shift+V { spawn-sh "$HOME/.config/niri/scripts/record-tiktok.sh"; }
+    Mod+Ctrl+V  { spawn-sh "pkill wf-recorder"; }
+    Mod+F       { maximize-column; }
+    Mod+Shift+F { maximize-column; }
+    Mod+G       { toggle-window-floating; }
+
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+J { move-window-down; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+L { move-column-right; }
+
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+L { focus-monitor-right; }
+    Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Ctrl+0  { move-column-to-workspace 10; }
+
+    Mod+U { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
+
+    Mod+R  { switch-preset-column-width; }
+    Mod+C  { center-column; }
+    Mod+Period  { expel-window-from-column; }
+    Mod+Backslash { consume-window-into-column; }
+
+    Mod+Shift+E { quit; }
+    Mod+Shift+P { power-off-monitors; }
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up 3"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down 3"; }
+    XF86AudioMute       allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "$HOME/.config/niri/scripts/brightness-up.sh"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "$HOME/.config/niri/scripts/brightness-down.sh"; }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+include "local/layout.kdl"
+include "local/cursor.kdl"
+include "local/windowrules.kdl"
